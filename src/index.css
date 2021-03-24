@@ -48,10 +48,9 @@ img {
 
 .tile {
   position: absolute;
-  width: calc(400% / 9);
+  width: calc(100% / 9);
   height: auto;
   transform: translateX(-60%);
-  
 }
 .truck {
   position: absolute;
@@ -59,8 +58,9 @@ img {
 
 .truck{
   transform: translate(-50%, -50%);
-  z-index: 2000;
+  z-index: 1000;
   width: 5vw;
   height: 5vw;
-  transition: top 0.35s linear, left 0.35s linear, opacity 0.5s linear;
+  transition: top 0.35s linear, left 0.35s linear, opacity 0.2s linear;
+  border: solid 1px red;
 }

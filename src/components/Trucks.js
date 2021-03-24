@@ -1,14 +1,15 @@
-import React, {useCallback} from "react";
-import { atom, useRecoilState} from "recoil";
-import {useInterval} from "../hooks/useInterval"
+  
+import React, { useCallback } from "react";
+import { atom, useRecoilState } from "recoil";
+import { useInterval } from "../hooks/useInterval";
 import MovingObject from "./MovingObject";
 
 function Trucks() {
   const trucksState = atom({
     key: "trucksState",
     default: [
-      { x: 10, y: 11, dir: "down", id: Math.random().toString(36).substr(2, 9) },
-      { x: 3, y: 10, dir: "up", id: Math.random().toString(36).substr(2, 9) },
+      { x: -1, y: 5, dir: "down", id: Math.random().toString(36).substr(2, 9) },
+      { x: 9, y: 6, dir: "up", id: Math.random().toString(36).substr(2, 9) },
     ],
   });
   const [trucks, setTrucks] = useRecoilState(trucksState);
@@ -29,17 +30,17 @@ function Trucks() {
       }
     });
     const newTrucks = [];
-    if (!trucksCopy.filter((truck) => truck.x === 1|| truck.x === 4).length) {
+    if (!trucksCopy.filter((truck) => truck.x === 7 || truck.x === 1).length) {
       newTrucks.push({
         id: Math.random().toString(36).substr(2, 9),
-        x: 10,
-        y: 11,
+        x: 9,
+        y: 6,
         dir: "up",
       });
       newTrucks.push({
         id: Math.random().toString(36).substr(2, 9),
-        x: 3,
-        y: 10,
+        x: -1,
+        y: 5,
         dir: "down",
       });
     }
@@ -71,6 +72,5 @@ function Trucks() {
     </>
   );
 }
-
 
 export default Trucks;
